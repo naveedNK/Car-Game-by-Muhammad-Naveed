@@ -5,9 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+  - enabled: 0
+    path: Assets/Tiny Teacup Studio/Low Poly Desert Environment/Demo/DemoScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9edbab529eb67c141937881f1580918c, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 191f2802ca52d364aa3ec65be29824cb, type: 2}
   m_UseUCBPForAssetBundles: 0

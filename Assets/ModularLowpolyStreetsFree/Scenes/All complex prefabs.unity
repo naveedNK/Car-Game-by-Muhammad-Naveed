@@ -148,13 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7036c9302010e241b91f347c91a5c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
-  - {fileID: 9106993067029816104, guid: cff922b1cad63a34d8e64483eaa70b41, type: 3}
-  - {fileID: 2687399761207407241, guid: b63e26beba886b54792f1fde110453bd, type: 3}
+  cratePrefab: {fileID: 9106993067029816104, guid: cff922b1cad63a34d8e64483eaa70b41, type: 3}
+  propPrefab: {fileID: 2687399761207407241, guid: b63e26beba886b54792f1fde110453bd, type: 3}
   player: {fileID: 1837065919}
-  spawnDistance: 20
-  removeDistance: 50
   laneOffset: 0
+  moveSpeed: 10
+  minInterval: 1
+  maxInterval: 2
 --- !u!4 &10099912
 Transform:
   m_ObjectHideFlags: 0
@@ -202,9 +202,7 @@ MonoBehaviour:
   scoreText: {fileID: 1849199905}
   gameOverText: {fileID: 808947286}
   restartText: {fileID: 626965257}
-  isGameOver: 0
   player: {fileID: 1837065920}
-  gameStop: 0
 --- !u!4 &114847353
 Transform:
   m_ObjectHideFlags: 0
@@ -1609,6 +1607,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3592328946525830099, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: gameOver
       value: 0
@@ -1637,6 +1639,10 @@ PrefabInstance:
       propertyPath: explosionEffect
       value: 
       objectReference: {fileID: 601986294}
+    - target: {fileID: 9015700389410091740, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
