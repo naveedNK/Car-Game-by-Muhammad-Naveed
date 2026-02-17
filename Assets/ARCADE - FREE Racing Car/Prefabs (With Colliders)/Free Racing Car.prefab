@@ -605,11 +605,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveLeftAction: {fileID: 3758480269951725293, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   moveRightAction: {fileID: -414235346224492607, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  restartAction: {fileID: 1508447143937933388, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   sideSpeed: 30
   laneLimit: 15
   turnAngle: 30
-  turnSmooth: 20
+  turnSmooth: 25
   explosionEffect: {fileID: 0}
   moveLeftState: 0
   moveRightState: 0

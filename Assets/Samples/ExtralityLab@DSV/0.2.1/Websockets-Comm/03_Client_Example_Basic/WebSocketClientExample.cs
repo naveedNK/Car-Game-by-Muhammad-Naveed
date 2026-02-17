@@ -1,6 +1,7 @@
 using UnityEngine;
 using NativeWebSocket;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using System;
 
 
@@ -11,7 +12,7 @@ using UnityEditor;
 public class WebSocketClientExample : MonoBehaviour
 {
     private WebSocket websocket;
-    public string serverIP = "XXX.XXX.XXX.XXX"; // Replace with your server's IP address
+    public string serverIP = "10.204.0.65"; // Replace with your server's IP address
     public int serverPort = 8081; // Replace with your server's port number (8081 is the default)
 
     [Range(0, 255)]
@@ -19,7 +20,7 @@ public class WebSocketClientExample : MonoBehaviour
 
     async void Start()
     {
-        websocket = new WebSocket("ws://" + serverIP + ":" + serverPort);
+        //websocket = new WebSocket("ws://" + serverIP + ":" + serverPort);
 
         //Runs when connected to the server
         websocket.OnOpen += async () =>
@@ -48,15 +49,27 @@ public class WebSocketClientExample : MonoBehaviour
 
         await websocket.Connect();
     }
+    public async void SendGameOver()
+    {
+        if (websocket != null && websocket.State == WebSocketState.Open)
+        {
+            await websocket.SendText("GAME_OVER:1");
+            Debug.Log("Sent: GAME_OVER:1");
+        }
+        else
+        {
+            Debug.LogWarning("WebSocket not connected");
+        }
+    }
 
     void Update()
     {
         //Although not necessary for our lab, I have left this here as a reference
         //Websockets will not work on WebGL builds so with this preprocessor directive we include all builds except WebGL as well as including the editor for testing purposes
-        #if !UNITY_WEBGL || UNITY_EDITOR 
+#if !UNITY_WEBGL || UNITY_EDITOR
 
-            websocket.DispatchMessageQueue();
-        #endif
+        websocket.DispatchMessageQueue();
+#endif
     }
 
     async void OnDestroy()
@@ -119,23 +132,33 @@ public class WebSocketClientExample : MonoBehaviour
 
     public void IncomingMessageParser(String msg)
     {
-        string valueParsed = msg.Substring( msg.IndexOf(":") + 1);
+        string valueParsed = msg.Substring(msg.IndexOf(":") + 1);
 
-        if(msg.Contains("button")) {
-            if(valueParsed == "1") 
+
+        if (msg.Contains("button"))
+        {
+            if (valueParsed == "1")
             {
-                //do something if button pressed
                 Debug.Log("ESP32 Button Pressed");
             }
-            if(valueParsed == "0") 
+            if (valueParsed == "0")
             {
-                //do something if button released
                 Debug.Log("ESP32 Button Released");
             }
-
         }
 
+
+        // GAME RESTART MESSAGE
+        if (msg.Contains("GAME_RESTART"))
+        {
+            if (valueParsed == "1")
+            {
+                Debug.Log("Game Restarted");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
     }
+
 
 }
 

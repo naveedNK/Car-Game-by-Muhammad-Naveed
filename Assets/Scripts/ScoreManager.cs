@@ -8,13 +8,13 @@ public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
-    public TextMeshProUGUI restartText;
+    //public TextMeshProUGUI restartText;
     public InputActionReference restartAction;
     public Button restartButton;
     private float score = 0f;
     public PlayerController player;
 
-    private bool isGameOver = false;
+    public bool isGameOver = false;
 
 
     void OnEnable()
@@ -40,7 +40,10 @@ public class ScoreManager : MonoBehaviour
         //}
 
         // Stop updating score if game over
-        if (isGameOver) return;
+        if (isGameOver && restartAction != null && restartAction.action.WasPressedThisFrame())
+        {
+            RestartGame();
+        }
 
         // Update score
         if (!player.gameOver)
@@ -53,10 +56,10 @@ public class ScoreManager : MonoBehaviour
             GameOver();
         }
 
-        if (restartAction != null && restartAction.action.WasPressedThisFrame())
-        {
-            RestartGame();
-        }
+        //if (restartAction != null && restartAction.action.WasPressedThisFrame())
+        //{
+        //    RestartGame();
+        //}
     }
 
     public void AddScore(int amount)
@@ -78,8 +81,6 @@ public class ScoreManager : MonoBehaviour
     //}
     public void RestartGame()
     {
-        SceneManager.LoadScene(
-        SceneManager.GetActiveScene().buildIndex
-        );
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

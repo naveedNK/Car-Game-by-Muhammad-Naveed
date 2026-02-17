@@ -457,7 +457,7 @@
                 {
                     "name": "MoveLeft",
                     "type": "Button",
-                    "id": "00b4db70-6544-4e89-8239-d784cf038215",
+                    "id": "70084f83-1ef2-4eeb-9ebe-29b4a484127c",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -874,7 +874,7 @@
                 },
                 {
                     "name": "",
-                    "id": "7e7752b4-54e9-46ec-af66-4b32b51a07ca",
+                    "id": "d27219d0-a98c-4012-9a3e-0b41ee1472d3",
                     "path": "<XRController>{LeftHand}/{PrimaryButton}",
                     "interactions": "",
                     "processors": "",
@@ -1570,7 +1570,7 @@
                 {
                     "name": "MoveRight",
                     "type": "Button",
-                    "id": "7fad17e0-5110-4b20-aa2c-3d84c87b887e",
+                    "id": "4077ec54-e0a9-4854-add2-38bf265092ea",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -1987,7 +1987,7 @@
                 },
                 {
                     "name": "",
-                    "id": "414cee09-3fc7-4a5f-a7da-0fb824e26a3d",
+                    "id": "d44731ee-0f44-451a-9750-c826dc05274c",
                     "path": "<XRController>{RightHand}/{PrimaryButton}",
                     "interactions": "",
                     "processors": "",
@@ -2645,15 +2645,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "RestartGame",
-                    "type": "Button",
-                    "id": "8fa862f6-add7-4a6d-9105-6b7392171898",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -3039,17 +3030,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Click",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "25cc1618-1f02-4cde-b18f-c8165a318f56",
-                    "path": "<XRController>{RightHand}/{GripButton}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RestartGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
