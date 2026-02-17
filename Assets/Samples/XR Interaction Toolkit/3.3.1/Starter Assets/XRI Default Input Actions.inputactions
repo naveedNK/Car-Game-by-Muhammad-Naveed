@@ -2180,6 +2180,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0cd2e9db-7633-4631-9e48-fce10910f1db",
+                    "path": "<XRController>{RightHand}/{TriggerButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "dd433817-216c-46b9-8dd3-f3a4ea1767b9",
                     "path": "<XRController>{RightHand}/{Grip}",
                     "interactions": "",
@@ -3027,6 +3038,17 @@
                     "id": "198e6869-709e-448d-96d4-27186c9d56e6",
                     "path": "<Touchscreen>/Press",
                     "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d770602c-ca9f-437a-9b1e-b698650aec94",
+                    "path": "<XRController>{RightHand}/{PointerActivated}",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "",
                     "action": "Click",

@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         m_IsControllable = true;
     }
+    public WebSocketGameController wsController;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -93,6 +94,7 @@ public class PlayerController : MonoBehaviour
             collision.gameObject.CompareTag("prop"))
         {
             gameOver = true;
+            wsController.GameOver();
 
             explosionEffect.transform.position = transform.position;
             explosionEffect.Play();
