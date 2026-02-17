@@ -11,7 +11,7 @@ public class InfinityRoad : MonoBehaviour
         startPos = transform.position;
 
         // Half the length of the road to determine when to reset
-        repeatLength = GetComponent<BoxCollider>().size.x / 2f;
+        repeatLength = GetComponent<BoxCollider>().size.x / 2;
     }
 
     void Update()
